@@ -35,3 +35,35 @@ btn3.addEventListener("click", function(){
         ul1.innerHTML += "<li>" + categorias[i] + "</li>";
     }
 });
+
+//Parte 3
+const btn4 = document.getElementById("btn4");
+const in2 =document.getElementById("in2");
+const in3 =document.getElementById("in3");
+const p2 =document.getElementById("p2");
+//let num1 = in2.value;
+//let num2 = in3.value;
+
+btn4.addEventListener("click", function(){
+    let num1 = Number(in2.value);
+    let num2 = Number(in3.value);
+    let bool= sumalo(num1,num2);
+    if (bool==true){
+    p2.textContent = "El resultado de la suma es: " + suma(num1,num2);
+    }
+    else{ p2.textContent = "Error. Los valores ingresados son menores a 0";}
+});
+
+function suma(num1,num2){
+    let resultado = num1 + num2;
+    return resultado;
+}
+
+function sumalo(num1,num2){
+    if (num1<=0 || num2<=0){
+        return false;
+    }
+    else{
+        return true;
+    }
+}
