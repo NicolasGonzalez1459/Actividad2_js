@@ -41,17 +41,18 @@ const btn4 = document.getElementById("btn4");
 const in2 =document.getElementById("in2");
 const in3 =document.getElementById("in3");
 const p2 =document.getElementById("p2");
-//let num1 = in2.value;
-//let num2 = in3.value;
+
 
 btn4.addEventListener("click", function(){
     let num1 = Number(in2.value);
     let num2 = Number(in3.value);
     let bool= sumalo(num1,num2);
     if (bool==true){
+        p2.style.color="green";
     p2.textContent = "El resultado de la suma es: " + suma(num1,num2);
     }
-    else{ p2.textContent = "Error. Los valores ingresados son menores a 0";}
+    else{ p2.style.color="red";
+        p2.textContent = "Error. Los valores ingresados son menores a 0";}
 });
 
 function suma(num1,num2){
@@ -67,3 +68,17 @@ function sumalo(num1,num2){
         return true;
     }
 }
+
+//Extra
+const btn5 = document.getElementById("btn5");
+const p3 = document.getElementById("p3");
+
+btn5.addEventListener("click", function(){
+    let contador = 1;
+    let context="";
+    while (contador <= 10){
+        context+= contador + " ";
+        contador++;
+    }
+    p3.textContent = context;
+});
